@@ -1,0 +1,18 @@
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.success-message {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 16px;
+  border-radius: var(--border-radius-sm);
+  margin-top: 16px;
+}
+
+.success-message p {
+  margin-bottom: 4px;
+}

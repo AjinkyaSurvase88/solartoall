@@ -1,0 +1,226 @@
+.scanner {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  align-items: center;
+  gap: 0;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  flex-shrink: 0;
+  opacity: 0.4;
+  transition: opacity var(--t-normal);
+}
+
+.step.stepActive {
+  opacity: 1;
+}
+
+.stepDot {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: background var(--t-normal), border-color var(--t-normal);
+}
+
+.step.stepActive .stepDot {
+  background: var(--gradient-brand);
+  border-color: transparent;
+  color: white;
+}
+
+.stepLabel {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.step.stepActive .stepLabel {
+  color: var(--brand-emerald-light);
+}
+
+.stepConnector {
+  flex: 1;
+  height: 1px;
+  background: rgba(15, 23, 42, 0.08);
+  margin: 0 8px;
+  margin-bottom: 22px;
+  transition: background var(--t-normal);
+}
+
+.connectorDone {
+  background: var(--brand-emerald);
+}
+
+/* Dropzone */
+.dropzone {
+  border: 2px dashed rgba(15, 23, 42, 0.12);
+  border-radius: var(--radius-lg);
+  padding: 40px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--t-normal);
+  background: rgba(16,185,129,0.02);
+  text-align: center;
+}
+
+.dropzone:hover,
+.dragging {
+  border-color: var(--brand-emerald);
+  background: rgba(16,185,129,0.05);
+}
+
+.dropzoneContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.uploadIcon {
+  font-size: 2.5rem;
+  margin-bottom: 4px;
+}
+
+.dropzoneTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.dropzoneHint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* Preview */
+.previewContainer {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: var(--border-subtle);
+}
+
+.previewImage {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  opacity: 0.85;
+  display: block;
+}
+
+.removeBtn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: rgba(0,0,0,0.7);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: var(--text-primary);
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: var(--font);
+  transition: background var(--t-fast);
+}
+
+.removeBtn:hover { background: rgba(239,68,68,0.3); }
+
+/* Progress */
+.progressSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.progressHeader {
+  display: flex;
+  justify-content: space-between;
+}
+
+.progressLabel {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.progressPct {
+  font-size: 0.85rem;
+  color: var(--brand-emerald-light);
+  font-weight: 700;
+}
+
+.progressHint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Results */
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.metricsRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.resultNote {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.linkBtn {
+  background: none;
+  border: none;
+  color: var(--brand-emerald-light);
+  font-size: 0.82rem;
+  font-family: var(--font);
+  cursor: pointer;
+  font-weight: 600;
+  padding: 0;
+}
+
+.linkBtn:hover {
+  text-decoration: underline;
+}

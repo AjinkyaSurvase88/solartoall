@@ -1,142 +1,1220 @@
-.page {
-  --background: #fafafa;
-  --foreground: #fff;
+/* ============================================
+   SOLAR TO ALL — PAGE-LEVEL RESPONSIVE LAYOUT
+   ============================================ */
 
-  --text-primary: #000;
-  --text-secondary: #666;
+/* ─── Top Info Strip ─── */
+.topStrip {
+  background: var(--brand-saffron-dark);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 7px 0;
+}
 
-  --button-primary-hover: #383838;
-  --button-secondary-hover: #f2f2f2;
-  --button-secondary-border: #ebebeb;
-
+.topStripInner {
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topStripRight {
+  display: flex;
+  gap: 16px;
+  flex-shrink: 0;
+}
+
+.topStripLink {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  transition: color var(--t-fast);
+}
+.topStripLink:hover {
+  color: #fff;
+}
+
+/* ─── Navigation ─── */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  border-bottom: 2px solid rgba(249,115,22,0.12);
+  box-shadow: 0 2px 16px rgba(120, 53, 15, 0.07);
+}
+
+.navInner {
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ─── Logo Box ─── */
+.navLogo {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.navLogoPhoto {
+  height: 44px;
+  width: auto;
+  display: block;
+  transition: height var(--t-fast);
+}
+
+@media (max-width: 480px) {
+  .navLogoPhoto {
+    height: 34px;
+  }
+}
+
+
+.navLogoBox {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+}
+
+.navLogoMain {
+  font-size: 1.22rem;
+  font-weight: 900;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+}
+
+.navLogoSub {
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--brand-saffron-dark);
+}
+
+.navLogoText {
+  font-weight: 800;
+  font-size: 1.25rem;
+  background: var(--gradient-brand-text);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Desktop Nav Links ─── */
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   flex: 1;
+  justify-content: center;
+}
+
+.navLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 500;
+  padding: 6px 10px;
+  border-radius: var(--radius-sm);
+  transition: color var(--t-fast), background var(--t-fast);
+  white-space: nowrap;
+  position: relative;
+}
+
+.navLink:hover {
+  color: var(--text-primary);
+  background: rgba(249,115,22,0.05);
+}
+
+/* "Free Solar Savings Check" — underlined primary link like real site */
+.navLinkPrimary {
+  color: var(--brand-saffron-dark) !important;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.navLinkPrimary:hover {
+  background: rgba(249,115,22,0.07) !important;
+}
+
+/* ─── Dropdown ─── */
+.navDropdown {
+  position: relative;
+}
+
+.navCaret {
+  font-size: 0.7rem;
+  margin-left: 2px;
+}
+
+.navDropdownMenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  min-width: 200px;
+  background: #fff;
+  border: var(--border-brand);
+  border-radius: var(--radius-md);
+  box-shadow: 0 12px 32px rgba(120, 53, 15, 0.12);
+  padding: 8px 0;
+  z-index: 200;
+}
+
+.navDropdown:hover .navDropdownMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+.navDropdownItem {
+  display: block;
+  padding: 10px 18px;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: background var(--t-fast), color var(--t-fast);
+}
+
+.navDropdownItem:hover {
+  background: rgba(249,115,22,0.07);
+  color: var(--brand-saffron-dark);
+}
+
+/* ─── Nav Right Group ─── */
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+}
+
+.navCta {
+  flex-shrink: 0;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: var(--radius-sm);
+  transition: var(--t-fast);
+  z-index: 110;
+}
+
+.hamburger:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.hamburgerBar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text-primary);
+  border-radius: 2px;
+  transition: transform var(--t-normal), opacity var(--t-fast);
+}
+
+.hamburger.open .hamburgerBar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger.open .hamburgerBar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open .hamburgerBar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile Nav Drawer */
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: 66px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(20px);
+  border-bottom: var(--border-subtle);
+  padding: 24px;
+  flex-direction: column;
+  gap: 20px;
+  z-index: 99;
+  animation: slideDown 0.25s var(--ease-out) forwards;
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobileMenu.open {
+  display: flex;
+}
+
+.mobileNavLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 0;
+  border-bottom: var(--border-subtle);
+  transition: color var(--t-fast);
+}
+
+.mobileNavLink:hover {
+  color: var(--brand-saffron);
+}
+
+.mobileBackBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  color: var(--brand-saffron-dark);
+  font-size: 0.9rem;
+  font-weight: 700;
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  margin-bottom: 8px;
+  width: fit-content;
+  transition: background var(--t-fast);
+}
+.mobileBackBtn:hover {
+  background: rgba(249, 115, 22, 0.2);
+}
+
+.mobileScrollTopBtn {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--bg-card);
+  color: var(--brand-saffron-dark);
+  border: 1px solid rgba(249, 115, 22, 0.3);
+  padding: 10px 16px;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: transform var(--t-fast), box-shadow var(--t-fast);
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.mobileScrollTopBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+}
+
+/* ─── Hero Section ─── */
+.hero {
+  position: relative;
+  padding: 160px 0 120px;
+  background: url('/images/panels-roof-sunset.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.heroBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(28, 10, 0, 0.88) 0%, rgba(180, 83, 9, 0.68) 100%);
+  pointer-events: none;
+}
+
+.heroContent {
+  position: relative;
+  z-index: 1;
+}
+
+.heroWrapper {
+  display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-family: var(--font-geist-sans);
-  background-color: var(--background);
-}
-
-.main {
-  display: flex;
-  flex: 1;
-  width: 100%;
+  text-align: center;
   max-width: 800px;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  background-color: var(--foreground);
-  padding: 120px 60px;
+  margin: 0 auto;
 }
 
-.intro {
+.heroTextSide {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  text-align: left;
+  align-items: center;
+  text-align: center;
+}
+
+.heroLabel {
+  margin-bottom: 24px;
+}
+
+.heroTitle {
+  margin-bottom: 24px;
+  text-align: center;
+  color: #ffffff;
+}
+
+.heroSubtitle {
+  font-size: 1.15rem;
+  max-width: 580px;
+  margin-bottom: 40px;
+  line-height: 1.7;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.heroCtas {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+  width: 100%;
+}
+
+.heroCtaBtn {
+  font-size: 1rem;
+  padding: 16px 32px;
+}
+
+/* Hero Image Side */
+.heroImageSide {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: var(--border-subtle);
+  aspect-ratio: 4 / 3;
+}
+
+.heroImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: transform var(--t-slow);
+}
+
+.heroImg:hover {
+  transform: scale(1.02);
+}
+
+/* Stats Row */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  max-width: 800px;
+  margin-top: 16px;
+  width: 100%;
+  box-shadow: var(--shadow-card);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.statCell {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.heroWrapper :global(.stat-label) {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.heroWrapper :global(.stat-number) {
+  background: linear-gradient(135deg, #FCD34D 0%, #FB923C 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+
+/* ─── Section ─── */
+.section {
+  padding: 96px 0;
+}
+
+.sectionDark {
+  padding: 96px 0;
+  background: var(--bg-dark);
+  border-top: var(--border-subtle);
+  border-bottom: var(--border-subtle);
+}
+
+.sectionHeader {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.sectionLabel {
+  margin: 0 auto 16px;
+}
+
+.sectionSubtitle {
+  max-width: 520px;
+  margin: 12px auto 0;
+}
+
+/* ─── How It Works Grid ─── */
+.howGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ─── Tools Section ─── */
+.toolsTabsWrap {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 32px;
+  overflow-x: auto;
+}
+
+.toolCard {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ─── Products ─── */
+.tableWrap {
+  overflow-x: auto;
+  margin-bottom: 48px;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-lg);
+}
+
+/* ─── Features Grid ─── */
+.featuresGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
 
-.intro h1 {
-  max-width: 320px;
-  font-size: 40px;
-  font-weight: 600;
-  line-height: 48px;
-  letter-spacing: -2.4px;
-  text-wrap: balance;
-  color: var(--text-primary);
+/* ─── Testimonials ─── */
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
-.intro p {
-  max-width: 440px;
-  font-size: 18px;
-  line-height: 32px;
-  text-wrap: balance;
-  color: var(--text-secondary);
+/* ─── CTA Form ─── */
+.ctaFormGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
 }
 
-.intro a {
-  font-weight: 500;
-  color: var(--text-primary);
+/* ─── Footer ─── */
+.footerGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  margin-bottom: 48px;
 }
 
-.ctas {
+.footerBottom {
+  border-top: var(--border-subtle);
+  padding-top: 24px;
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  max-width: 440px;
-  gap: 16px;
-  font-size: 14px;
-}
-
-.ctas a {
-  display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  height: 40px;
-  padding: 0 16px;
-  border-radius: 128px;
-  border: 1px solid transparent;
-  transition: 0.2s;
-  cursor: pointer;
-  width: fit-content;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.footerColTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.footerLinks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footerLink {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color var(--t-fast);
+}
+
+.footerLink:hover {
+  color: var(--brand-emerald-light);
+}
+
+.footerSocials {
+  display: flex;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+/* ============================================
+   TABLET BREAKPOINT (max 1024px)
+   ============================================ */
+@media (max-width: 1024px) {
+  .howGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .featuresGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .testimonialsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .footerGrid {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+}
+
+/* ============================================
+   MOBILE BREAKPOINT (max 768px)
+   ============================================ */
+@media (max-width: 768px) {
+  /* Nav */
+  .navLinks,
+  .navCta {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 80px 0 56px;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .heroCtaBtn {
+    padding: 14px 24px;
+    font-size: 0.95rem;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .statsGrid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 100%;
+  }
+
+  .heroCtas {
+    margin-bottom: 40px;
+  }
+
+  /* Sections */
+  .section,
+  .sectionDark {
+    padding: 64px 0;
+  }
+
+  .sectionHeader {
+    margin-bottom: 36px;
+  }
+
+  /* How It Works */
+  .howGrid {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  /* Features */
+  .featuresGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Testimonials */
+  .testimonialsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* CTA Form */
+  .ctaFormGrid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footerGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Hero Mobile */
+  .heroWrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    text-align: center;
+  }
+  .heroTextSide {
+    align-items: center;
+  }
+  .heroTitle, .heroSubtitle {
+    text-align: center;
+  }
+  .heroSubtitle {
+    margin-bottom: 32px;
+  }
+  .heroCtas {
+    justify-content: center;
+    margin-bottom: 32px;
+  }
+  .heroImageSide {
+    max-width: 500px;
+    margin: 0 auto;
+    aspect-ratio: 1.4;
+  }
+
+  /* Showcase Mobile */
+  .showcaseWrapper {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .showcaseText {
+    align-items: center;
+    text-align: center;
+  }
+  .showcaseImage {
+    max-width: 500px;
+    margin: 0 auto;
+    aspect-ratio: 1.4;
+  }
+}
+
+/* ============================================
+   SMALL MOBILE (max 480px)
+   ============================================ */
+@media (max-width: 480px) {
+  .hero {
+    padding: 64px 0 48px;
+  }
+}
+
+/* ─── Showcase Section ─── */
+.showcaseWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.showcaseText {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.showcaseImage {
+  position: relative;
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: var(--border-subtle);
+  aspect-ratio: 1.5;
+}
+
+.showcaseImg {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* ─── Vetted Installer Section ─── */
+.installerSection {
+/* ─── Vetted Installer Section ─── */
+.installerSection {
+  position: relative;
+  padding: 140px 0;
+  background: url('/images/technicians-installing.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  border-top: var(--border-subtle);
+  overflow: hidden;
+}
+
+.installerWrapper {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* ─── Solar Showcase Gallery ─── */
+.gallerySection {
+  position: relative;
+  padding: 140px 0;
+  background: url('/images/panels-field-sunny.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  border-top: var(--border-subtle);
+  border-bottom: var(--border-subtle);
+  overflow: hidden;
+}
+
+/* ─── Section Overlay & Glassmorphism ─── */
+.sectionOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(28, 10, 0, 0.85) 0%, rgba(120, 53, 15, 0.6) 100%);
+}
+
+.glassCard {
+  background: rgba(28, 10, 0, 0.75);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  border-radius: var(--radius-xl);
+  padding: 56px 48px;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(249,115,22,0.12);
+  text-align: center;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.glassCard h2 {
+  color: #ffffff !important;
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  margin-bottom: 20px;
+}
+
+.glassCard p {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.glassCard :global(.section-label) {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+.glassCard ul {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 0;
+  list-style: none;
+}
+
+.glassCard li {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.98rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-align: left;
+}
+
+/* ─── CTA Background Section ─── */
+.ctaSection {
+  position: relative;
+  padding: 140px 0;
+  background: url('/images/solar7.jpg') no-repeat center center;
+  background-size: cover;
+  background-attachment: fixed;
+  border-top: var(--border-subtle);
+  overflow: hidden;
+}
+
+.ctaOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(28, 10, 0, 0.90) 0%, rgba(180, 83, 9, 0.72) 100%);
+  z-index: 1;
+}
+
+.ctaContent {
+  position: relative;
+  z-index: 2;
+  color: #ffffff;
+}
+
+.ctaContent h2 {
+  color: #ffffff !important;
+}
+
+.ctaContent p {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.ctaContent :global(.section-label) {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: #ffffff !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+}
+
+/* ─── Responsive Additions ─── */
+@media (max-width: 768px) {
+  .installerSection, .gallerySection, .ctaSection {
+    padding: 80px 0;
+    background-attachment: scroll; /* Disable fixed on mobile for smooth performance */
+  }
+  .glassCard {
+    padding: 36px 24px;
+    margin: 0 16px;
+  }
+  .topStrip {
+    font-size: 0.72rem;
+  }
+  .topStripRight {
+    display: none;
+  }
+  .navLinks {
+    display: none;
+  }
+  .navRight {
+    display: none;
+  }
+}
+
+/* ─── Design Gallery Section ─── */
+.designBullets {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 44px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.designBulletItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.98rem;
+  color: var(--text-secondary);
   font-weight: 500;
+  padding: 12px 20px;
+  background: rgba(249,115,22,0.045);
+  border: 1px solid rgba(249,115,22,0.14);
+  border-radius: var(--radius-md);
+  transition: background var(--t-fast), border-color var(--t-fast);
 }
 
-a.primary {
-  background: var(--text-primary);
-  color: var(--background);
-  gap: 8px;
+.designBulletItem:hover {
+  background: rgba(249,115,22,0.09);
+  border-color: rgba(249,115,22,0.25);
 }
 
-a.secondary {
-  border-color: var(--button-secondary-border);
+.designBulletIcon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+  width: 36px;
+  text-align: center;
 }
 
-/* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
-  a.primary:hover {
-    background: var(--button-primary-hover);
-    border-color: transparent;
-  }
+/* Gallery: 1 large + 4 thumbs */
+.designGallery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
 
-  a.secondary:hover {
-    background: var(--button-secondary-hover);
-    border-color: transparent;
+.designGalleryMain {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  aspect-ratio: 4/3;
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(249,115,22,0.12);
+  border: 2px solid rgba(249,115,22,0.18);
+}
+
+.designGalleryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.designThumb {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  aspect-ratio: 3/2;
+  cursor: pointer;
+  box-shadow: var(--shadow-card);
+  border: 1px solid rgba(249,115,22,0.12);
+  transition: transform var(--t-normal), box-shadow var(--t-normal);
+}
+
+.designThumb:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card), 0 0 0 2px var(--brand-saffron);
+}
+
+.designImg {
+  display: block;
+  transition: transform var(--t-slow);
+}
+
+.designGalleryMain:hover .designImg,
+.designThumb:hover .designImg {
+  transform: scale(1.04);
+}
+
+/* Overlay badge on main image */
+.designImgOverlay {
+  position: absolute;
+  bottom: 14px;
+  left: 14px;
+  z-index: 2;
+}
+
+/* Label overlay on thumbnails */
+.designThumbOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(28,10,0,0.72) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  padding: 12px 14px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
+  letter-spacing: 0.03em;
+  opacity: 0;
+  transition: opacity var(--t-normal);
+}
+
+.designThumb:hover .designThumbOverlay {
+  opacity: 1;
+}
+
+/* ─── Design gallery responsive ─── */
+@media (max-width: 900px) {
+  .designGallery {
+    grid-template-columns: 1fr;
+  }
+  .designGalleryMain {
+    aspect-ratio: 16/9;
   }
 }
 
-@media (max-width: 600px) {
-  .main {
-    padding: 48px 24px;
-  }
+/* ─── Solar For Everyone Section ─── */
+.solarForEveryoneGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
 
-  .intro {
-    gap: 16px;
-  }
+.solarForEveryoneText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 
-  .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+.solarForEveryoneImages {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sfeMainImg {
+  width: 100%;
+  aspect-ratio: 4/3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  border: 2px solid rgba(249,115,22,0.18);
+  box-shadow: var(--shadow-card), 0 0 0 1px rgba(249,115,22,0.08);
+}
+
+.sfeThumbRow {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+/* Mini testimonial card inside "Solar For Everyone" */
+.miniTestimonial {
+  margin-top: 32px;
+  padding: 20px 24px;
+  background: rgba(249,115,22,0.05);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--brand-saffron);
+}
+
+.miniTestimonialQuote {
+  font-size: 2.2rem;
+  line-height: 1;
+  color: var(--brand-saffron);
+  font-family: Georgia, serif;
+  margin-bottom: 8px;
+}
+
+.miniTestimonialText {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.miniTestimonialAuthor {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--brand-saffron-dark);
+}
+
+/* ─── Why Pre-Installation Service Section ─── */
+.whyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.whyImageCol {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-card), 0 0 0 2px rgba(249,115,22,0.1);
+}
+
+.whyFeaturesCol {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.whyFeatureItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 20px 24px;
+  background: var(--bg-card);
+  border: var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: transform var(--t-normal), border-color var(--t-normal);
+}
+
+.whyFeatureItem:hover {
+  transform: translateX(6px);
+  border-color: rgba(249,115,22,0.28);
+}
+
+.whyFeatureIcon {
+  font-size: 2rem;
+  flex-shrink: 0;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(249,115,22,0.09);
+  border: 1px solid rgba(249,115,22,0.2);
+  border-radius: var(--radius-md);
+}
+
+.whyFeatureTitle {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+}
+
+.whyFeatureDesc {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.sfeMainPhoto {
+  width: 100%;
+  height: 420px;
+  object-fit: cover;
+  display: block;
+  transition: height var(--t-fast);
+}
+
+.whyImagePhoto {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+  transition: height var(--t-fast);
+}
+
+/* ─── Responsive for new sections ─── */
+@media (max-width: 900px) {
+  .solarForEveryoneGrid,
+  .whyGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .sfeMainPhoto {
+    height: 300px;
+  }
+  .whyImagePhoto {
+    height: 300px;
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .logo {
-    filter: invert();
+@media (max-width: 560px) {
+  .sfeMainPhoto {
+    height: 220px;
   }
-
-  .page {
-    --background: #000;
-    --foreground: #000;
-
-    --text-primary: #ededed;
-    --text-secondary: #999;
-
-    --button-primary-hover: #ccc;
-    --button-secondary-hover: #1a1a1a;
-    --button-secondary-border: #1a1a1a;
+  .whyImagePhoto {
+    height: 220px;
+  }
+  .designGalleryGrid {
+    grid-template-columns: 1fr; /* Stack blueprints vertically on mobile for readability */
+  }
+  .designBullets {
+    max-width: 100%;
   }
 }

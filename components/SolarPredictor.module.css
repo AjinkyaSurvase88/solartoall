@@ -1,0 +1,189 @@
+.predictor {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.inputRow {
+  display: flex;
+  gap: 10px;
+}
+
+.addressInput {
+  flex: 1;
+}
+
+.calcBtn {
+  flex-shrink: 0;
+  padding: 14px 20px;
+}
+
+/* Use My Location button */
+.geoBtn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: fit-content;
+  padding: 8px 16px;
+  border: 1px solid rgba(16,185,129,0.3);
+  border-radius: var(--radius-md);
+  background: rgba(16,185,129,0.05);
+  color: var(--brand-emerald-light);
+  font-family: var(--font);
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all var(--t-fast);
+  white-space: nowrap;
+}
+
+.geoBtn:hover:not(:disabled) {
+  background: rgba(16,185,129,0.12);
+  border-color: rgba(16,185,129,0.55);
+  transform: translateY(-1px);
+}
+
+.geoBtn:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.geoErrorText {
+  font-size: 0.8rem;
+  color: #dc2626;
+  margin-top: 2px;
+}
+
+.backBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.25);
+  color: var(--brand-saffron-dark);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  width: fit-content;
+  transition: all var(--t-fast);
+}
+
+.backBtn:hover {
+  background: rgba(249, 115, 22, 0.2);
+  transform: translateX(-2px);
+}
+
+.loader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.results {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.resultsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.location {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.savingsBar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.savingsBarLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.savingsPercent {
+  color: var(--brand-emerald-light);
+  font-weight: 700;
+}
+
+.ctaBox {
+  background: rgba(16,185,129,0.04);
+  border: 1px solid rgba(16,185,129,0.15);
+  border-radius: var(--radius-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.ctaBox p {
+  font-size: 0.9rem;
+}
+
+.leadForm {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+@media (max-width: 600px) {
+  .inputRow {
+    flex-direction: column;
+  }
+  .calcBtn {
+    width: 100%;
+  }
+  .metricsGrid {
+    grid-template-columns: 1fr;
+  }
+}

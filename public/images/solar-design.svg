@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 400" fill="none">
+  <!-- Dark blue/gray blueprint theme grid -->
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F0F9FF" />
+      <stop offset="100%" stop-color="#E0F2FE" />
+    </linearGradient>
+    <radialGradient id="heatMap" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#10B981" stop-opacity="0.3" />
+      <stop offset="70%" stop-color="#F59E0B" stop-opacity="0.2" />
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0.1" />
+    </radialGradient>
+  </defs>
+
+  <rect width="600" height="400" fill="url(#blueGrad)" rx="12" />
+  
+  <!-- Grid overlay -->
+  <path d="M0 40 H600 M0 80 H600 M0 120 H600 M0 160 H600 M0 200 H600 M0 240 H600 M0 280 H600 M0 320 H600 M0 360 H600" stroke="#BAE6FD" stroke-width="1" />
+  <path d="M40 0 V400 M80 0 V400 M120 0 V400 M160 0 V400 M200 0 V400 M240 0 V400 M280 0 V400 M320 0 V400 M360 0 V400 M400 0 V400 M440 0 V400 M480 0 V400 M520 0 V400 M560 0 V400" stroke="#BAE6FD" stroke-width="1" />
+
+  <!-- Heatmap/Solar potential gradient visualization circles -->
+  <circle cx="280" cy="180" r="140" fill="url(#heatMap)" />
+  <circle cx="200" cy="150" r="80" fill="#10B981" opacity="0.15" />
+  
+  <!-- Roof Outline (flat projection) -->
+  <polygon points="180,260 220,120 380,120 420,260" fill="none" stroke="#0284C7" stroke-width="3" stroke-dasharray="4 2" />
+  <polygon points="180,260 220,120 380,120 420,260" fill="#0EA5E9" opacity="0.04" />
+  
+  <!-- Roof Ridge lines -->
+  <line x1="220" y1="120" x2="300" y2="190" stroke="#0284C7" stroke-width="2" />
+  <line x1="380" y1="120" x2="300" y2="190" stroke="#0284C7" stroke-width="2" />
+  <line x1="180" y1="260" x2="300" y2="190" stroke="#0284C7" stroke-width="2" />
+  <line x1="420" y1="260" x2="300" y2="190" stroke="#0284C7" stroke-width="2" />
+
+  <!-- Solar panel layout blueprints -->
+  <!-- Section A (Left panel group) -->
+  <g fill="#10B981" stroke="#059669" stroke-width="1.5" opacity="0.85">
+    <rect x="230" y="145" width="22" height="12" transform="rotate(-15 230 145)" />
+    <rect x="255" y="138" width="22" height="12" transform="rotate(-15 255 138)" />
+    <rect x="280" y="131" width="22" height="12" transform="rotate(-15 280 131)" />
+    
+    <rect x="220" y="165" width="22" height="12" transform="rotate(-15 220 165)" />
+    <rect x="245" y="158" width="22" height="12" transform="rotate(-15 245 158)" />
+    <rect x="270" y="151" width="22" height="12" transform="rotate(-15 270 151)" />
+  </g>
+
+  <!-- Section B (Right panel group - Optimal Irradiance) -->
+  <g fill="#0EA5E9" stroke="#0284C7" stroke-width="1.5" opacity="0.85">
+    <rect x="320" y="135" width="22" height="12" transform="rotate(15 320 135)" />
+    <rect x="345" y="142" width="22" height="12" transform="rotate(15 345 142)" />
+    <rect x="370" y="149" width="22" height="12" transform="rotate(15 370 149)" />
+    
+    <rect x="310" y="155" width="22" height="12" transform="rotate(15 310 155)" />
+    <rect x="335" y="162" width="22" height="12" transform="rotate(15 335 162)" />
+    <rect x="360" y="169" width="22" height="12" transform="rotate(15 360 169)" />
+  </g>
+
+  <!-- Tree shadow projection (Obstacle warning) -->
+  <!-- Stylized tree shadow -->
+  <path d="M120 150 Q160 120 170 170 T150 220 T110 200 Z" fill="#EF4444" opacity="0.15" />
+  <path d="M120 150 Q160 120 170 170 T150 220 T110 200 Z" stroke="#EF4444" stroke-width="1.5" stroke-dasharray="3 3" opacity="0.4" />
+  
+  <!-- Tree icon representation -->
+  <circle cx="110" cy="160" r="18" fill="#10B981" opacity="0.2" />
+  <circle cx="110" cy="160" r="12" fill="#059669" opacity="0.4" />
+  <line x1="110" y1="172" x2="110" y2="185" stroke="#059669" stroke-width="2" />
+
+  <!-- Cursor & measuring HUD elements -->
+  <line x1="300" y1="80" x2="300" y2="300" stroke="#0284C7" stroke-width="1" stroke-dasharray="2 4" />
+  <line x1="150" y1="190" x2="450" y2="190" stroke="#0284C7" stroke-width="1" stroke-dasharray="2 4" />
+  
+  <circle cx="300" cy="190" r="6" stroke="#0284C7" stroke-width="2" fill="white" />
+  <circle cx="300" cy="190" r="2" fill="#0284C7" />
+  
+  <!-- UI Text Box (Solar Potential Indicator) -->
+  <rect x="390" y="290" width="180" height="80" fill="white" stroke="#E2E8F0" stroke-width="2" rx="8" />
+  <text x="405" y="315" font-family="sans-serif" font-size="11" font-weight="bold" fill="#0F172A">Rooftop Area Analysis</text>
+  <text x="405" y="335" font-family="sans-serif" font-size="10" fill="#475569">Total Area: 145 sq.m</text>
+  <text x="405" y="352" font-family="sans-serif" font-size="10" fill="#10B981" font-weight="bold">Solar Suitability: EXCELLENT</text>
+</svg>

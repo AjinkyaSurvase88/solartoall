@@ -1,0 +1,111 @@
+.predictor-container {
+  /* Container visual adjustments are handled by the glass-panel class */
+  height: 100%;
+}
+
+.predictor-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.address-input {
+  width: 100%;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.result-dashboard {
+  margin-top: 24px;
+  background: rgba(3, 7, 18, 0.4);
+  border-radius: var(--border-radius-md);
+  padding: 24px;
+  border: var(--glass-border);
+  animation: fadeIn var(--transition-normal) forwards;
+}
+
+.result-dashboard h4 {
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+  font-size: 1.25rem;
+}
+
+.location-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 24px;
+  line-height: 1.4;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: var(--border-radius-sm);
+  padding: 18px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  transition: background var(--transition-fast);
+}
+
+.stat-box:hover {
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+  text-align: center;
+  font-weight: 600;
+}
+
+.stat-value {
+  font-size: 1.35rem;
+  font-weight: 700;
+  font-family: var(--font-heading);
+}
+
+.lead-cta {
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.lead-cta p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 14px;
+}
+
+.lead-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.success-message {
+  background: var(--success-glow);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  padding: 20px;
+  border-radius: var(--border-radius-sm);
+  margin-top: 16px;
+  text-align: center;
+}
+
+.success-message p {
+  margin-bottom: 6px;
+}

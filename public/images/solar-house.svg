@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" fill="none">
+  <!-- Sky background gradient -->
+  <defs>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E0F2FE" />
+      <stop offset="100%" stop-color="#F0FDFA" />
+    </linearGradient>
+    <linearGradient id="houseGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#F1F5F9" />
+    </linearGradient>
+    <linearGradient id="roofGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#475569" />
+      <stop offset="100%" stop-color="#334155" />
+    </linearGradient>
+    <linearGradient id="panelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E40AF" />
+      <stop offset="50%" stop-color="#1E3A8A" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+  </defs>
+
+  <rect width="600" height="450" fill="url(#skyGrad)" />
+  <circle cx="500" cy="80" r="50" fill="#FBBF24" opacity="0.15" />
+  <circle cx="500" cy="80" r="30" fill="#F59E0B" opacity="0.8" />
+  
+  <!-- Subtle grid overlay -->
+  <path d="M0 50 H600 M0 100 H600 M0 150 H600 M0 200 H600 M0 250 H600 M0 300 H600 M0 350 H600 M0 400 H600" stroke="#E2E8F0" stroke-width="1" />
+  <path d="M50 0 V450 M100 0 V450 M150 0 V450 M200 0 V450 M250 0 V450 M300 0 V450 M350 0 V450 M400 0 V450 M450 0 V450 M500 0 V450 M550 0 V450" stroke="#E2E8F0" stroke-width="1" />
+
+  <!-- Modern House Structure -->
+  <!-- Left Wall -->
+  <polygon points="120,380 280,380 280,220 120,220" fill="url(#houseGrad)" stroke="#CBD5E1" stroke-width="2" />
+  <!-- Right Wall (isometric view) -->
+  <polygon points="280,380 440,340 440,190 280,220" fill="#E2E8F0" stroke="#CBD5E1" stroke-width="2" />
+  
+  <!-- Main Roof (slanted, right side) -->
+  <polygon points="260,160 460,120 440,190 280,220" fill="url(#roofGrad)" stroke="#1E293B" stroke-width="2" />
+  <!-- Left Roof Gable -->
+  <polygon points="100,220 200,140 300,220" fill="#64748B" stroke="#1E293B" stroke-width="2" />
+  
+  <!-- Solar Panels Array on Main Roof -->
+  <!-- Panel 1 -->
+  <polygon points="290,195 350,183 340,215 285,225" fill="url(#panelGrad)" stroke="#93C5FD" stroke-width="1.5" />
+  <line x1="320" y1="189" x2="312" y2="220" stroke="#60A5FA" stroke-width="1" />
+  <line x1="287" y1="210" x2="345" y2="199" stroke="#60A5FA" stroke-width="1" />
+  
+  <!-- Panel 2 -->
+  <polygon points="360,181 420,169 410,201 355,211" fill="url(#panelGrad)" stroke="#93C5FD" stroke-width="1.5" />
+  <line x1="390" y1="175" x2="382" y2="206" stroke="#60A5FA" stroke-width="1" />
+  <line x1="357" y1="196" x2="415" y2="185" stroke="#60A5FA" stroke-width="1" />
+
+  <!-- Panel 3 (Second row) -->
+  <polygon points="300,165 360,153 350,185 295,195" fill="url(#panelGrad)" stroke="#93C5FD" stroke-width="1.5" />
+  <line x1="330" y1="159" x2="322" y2="190" stroke="#60A5FA" stroke-width="1" />
+  <line x1="297" y1="180" x2="355" y2="169" stroke="#60A5FA" stroke-width="1" />
+  
+  <!-- Panel 4 (Second row) -->
+  <polygon points="370,151 430,139 420,171 365,181" fill="url(#panelGrad)" stroke="#93C5FD" stroke-width="1.5" />
+  <line x1="400" y1="145" x2="392" y2="176" stroke="#60A5FA" stroke-width="1" />
+  <line x1="367" y1="166" x2="425" y2="155" stroke="#60A5FA" stroke-width="1" />
+
+  <!-- House details: Windows, Door, Landscaping -->
+  <!-- Door -->
+  <rect x="180" y="290" width="40" height="90" fill="#475569" rx="3" />
+  <circle cx="212" cy="335" r="3" fill="#FBBF24" />
+  
+  <!-- Large Front Window -->
+  <rect x="140" y="240" width="120" height="40" fill="#BAE6FD" stroke="#64748B" stroke-width="2" rx="4" />
+  <line x1="200" y1="240" x2="200" y2="280" stroke="#64748B" stroke-width="1.5" />
+  <line x1="140" y1="260" x2="260" y2="260" stroke="#64748B" stroke-width="1.5" />
+  
+  <!-- Side Window -->
+  <polygon points="310,240 370,225 370,265 310,280" fill="#BAE6FD" stroke="#64748B" stroke-width="2" />
+  <line x1="340" y1="232" x2="340" y2="272" stroke="#64748B" stroke-width="1.5" />
+
+  <!-- Green Grass / Hill -->
+  <path d="M0 380 Q200 370 400 390 T600 370 V450 H0 Z" fill="#10B981" opacity="0.8" />
+  <path d="M0 395 Q300 380 600 405 V450 H0 Z" fill="#059669" />
+
+  <!-- Sun Rays illustration -->
+  <path d="M470 120 L400 150 M440 100 L350 130" stroke="#F59E0B" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.6" />
+</svg>
