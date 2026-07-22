@@ -216,7 +216,9 @@ export default function Home() {
               </p>
               <div className={styles.heroCtas}>
                 <a href="#cta" className={`btn btn-primary ${styles.heroCtaBtn}`}>Check My Solar Savings</a>
-                <a href="#tools" className={`btn btn-outline ${styles.heroCtaBtn}`}>Try Free AI Tools</a>
+                <a href="#tools" className={`btn ${styles.heroCtaBtn} ${styles.heroAiToolsBtn}`}>
+                  <Sparkles size={16} style={{ display: 'inline-block', verticalAlign: 'middle', marginRight: '6px', color: '#FCD34D' }} /> Try Free AI Tools
+                </a>
               </div>
 
               {/* Stats Row */}
